@@ -1,8 +1,9 @@
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Game {
-    public void run() throws IOException {
+    public int run() throws IOException {
         file_IO file = new file_IO();
         file_IO line_check = new file_IO();
         int line = line_check.line_chk();
@@ -14,9 +15,26 @@ public class Game {
             else
                 return o1[0].compareTo(o2[0]);
         }); // 2차원 배열 정렬식 복붙함
+
         /*  for(int i=0;i<line;i++){
             System.out.println(words[i][0]+" "+words[i][1]);
         } //!!DEBUG CODE!!*/
+        Scanner sc = new Scanner(System.in);
+        int score=0;
+        String answer;
+        for(int i=0;i<line;i++){
+            System.out.print(words[i][0]+" --> ");
+            answer=sc.next();
+            if (answer.equals(".quit")) return score;
+            else if(words[i][1].equals(answer)){
+                score+=5;
+                System.out.println("Correct !");
+            }
+            else{
+                System.out.println("Incorrect!");
+            }
+        }
+        return score;
     }
 
 }

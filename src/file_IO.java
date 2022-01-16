@@ -14,7 +14,7 @@ public class file_IO {
             br.close();
     }
     public int line_chk() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("c:/dic.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("c:/dic.txt")); // fileread는 bufferedReader+FileReader 로 한줄씩 읽어야 한다. (무조건 String형)
         int result=0;
         while(true) {
             String line = br.readLine();
