@@ -15,6 +15,7 @@ public class Game {
         } //!!DEBUG CODE!!*/
         return quiz(words,line);
     }
+
     public static void sorter(String[][] words){
         Arrays.sort(words, (o1, o2) -> {
             if(o1[0].contentEquals(o2[0]))
@@ -23,6 +24,7 @@ public class Game {
                 return o1[0].compareTo(o2[0]);
         }); // 2차원 배열 정렬식 복붙함
     }
+
     public static int quiz(String[][] words,int line){
         Scanner sc = new Scanner(System.in);
         int score=0;
